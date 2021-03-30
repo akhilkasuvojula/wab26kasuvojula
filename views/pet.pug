@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to Assignment 10
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let pet = [
+                    {
+                        "name": "dolly",
+                        "age": 12,
+                        "gender": "male"
+                    },
+                    {
+                        "name": "snoopy",
+                        "age": 7,
+                        "gender": "female"
+                    },
+                    {
+                        "name": "jepsy",
+                        "age": 9,
+                        "gender": "male"
+                    },                   
+                ]
+            each i in pet
+                div(class="col-sm-2") #{i.name}
+                div(class="col-sm-2") #{i.age}
+                div(class="col-sm-2") #{i.gender}
