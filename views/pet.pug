@@ -23,7 +23,12 @@ block content
                         "gender": "male"
                     },                   
                 ]
-            each i in pet
-                div(class="col-sm-2") #{i.name}
-                div(class="col-sm-2") #{i.age}
-                div(class="col-sm-2") #{i.gender}
+            each i,index in pet
+                div(class="col-sm-2" onclick=`buy(${index})`) #{i.name}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{i.age}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{i.gender}
+  script.    
+        function buy(itemNo)
+        {
+             alert(`You purchased Item ${itemNo+1}`)
+        }             
